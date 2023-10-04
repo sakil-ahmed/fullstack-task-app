@@ -1,0 +1,28 @@
+.topbar_root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top:30px;
+  padding-bottom:30px;
+
+  .topbar_search_box{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    input{
+      border: none;
+      outline: none;
+      width: auto;
+    }
+  }
+  .topbar_right{
+    display: flex;
+    align-items: center;
+    gap:38px;
+  }
+  .avatar{
+    width: 32px;
+    height: 32px;
+    border-radius:50%;
+  }
+}

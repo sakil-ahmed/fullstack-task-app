@@ -1,0 +1,14 @@
+.root_view_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}

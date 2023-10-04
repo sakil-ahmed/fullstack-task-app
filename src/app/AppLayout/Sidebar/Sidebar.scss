@@ -1,0 +1,87 @@
+@import "/src/styles/variable";
+
+.sidebar {
+  &_root {
+    background: $white;
+    box-shadow: 7px -1px 12px 0px rgba($black, 0.11);
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &_logo {
+    text-align: center;
+
+    &_img {
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+
+  &_menu_items {
+    margin-top: 60px;
+  }
+
+  &_menu_item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    gap: 10px;
+    color: $gray;
+    padding: 10px 10px 10px 43px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgba($typography, 0.10);
+      color: $black;
+
+      svg {
+        stroke: $black;
+        transition: all 0.3s ease-in-out;
+
+        path {
+          transition: all 0.3s ease-in-out;
+          stroke: $black;
+        }
+      }
+    }
+
+    &_active {
+      background-color: rgba($typography, 0.10);
+      color: $black;
+      svg {
+        stroke: $black;
+        transition: all 0.3s ease-in-out;
+        path {
+          transition: all 0.3s ease-in-out;
+          stroke: $black;
+        }
+      }
+    }
+  }
+
+}
+
+.logout_btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-weight: 500;
+
+  &:hover {
+    background-color: rgba($typography, 0.10)
+  }
+
+}

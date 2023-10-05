@@ -7,5 +7,7 @@ import {useRouter} from "next/navigation";
 
 export default function Home() {
 
-  return (<p>Loading....</p>)
+  return (<main className={'loading_screen'}>
+    <div className={'main_loading'}></div>
+  </main>)
 }

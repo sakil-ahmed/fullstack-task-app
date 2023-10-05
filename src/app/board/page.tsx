@@ -4,6 +4,7 @@ import {LeftSideBar} from "@/app/AppLayout/Sidebar/SidebarLayout";
 import {HeadingH1} from "@/components/heading/Heading";
 import {TopBar} from "@/app/AppLayout/TopBar/TopBar";
 import {DownArrowIcon} from "@/common/icons";
+import {Button} from "@/components/Button/Button";
 
 
 export default function Page() {
@@ -18,7 +19,9 @@ export default function Page() {
           <div className='root_view_top'>
             <HeadingH1>Board</HeadingH1>
             <button>This Week<DownArrowIcon/></button>
+
           </div>
+          <Button isLoading={true} text={'Button'}/>
         </div>
       </AppLayout>
 

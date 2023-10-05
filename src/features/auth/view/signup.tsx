@@ -4,8 +4,15 @@ import Link from "next/link";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import {authService} from "@/features/auth/logic/auth.service";
+import {useMutation} from "@tanstack/react-query";
+import {Notify} from "@/lib/utils/Notify";
+import {AuthEntity} from "@/features/auth/data/auth.entity";
+import {useRouter} from "next/navigation";
+import {Button} from "@/components/Button/Button";
 
 export const Signup = () => {
+  const router = useRouter()
   const schema = yup
     .object({
       name: yup.string().required(),
@@ -21,7 +28,23 @@ export const Signup = () => {
   } = useForm({
     resolver: yupResolver(schema),
   })
-  const onSubmit = (data: any) => console.log(data)
+
+
+  const mutation = useMutation((dto: any) => authService.login(dto),
+    {
+      onSuccess() {
+        Notify("Account Created" , "success")
+        router.push('/board', { scroll: false })
+      },
+      onError(err:AuthEntity.responseError) {
+        Notify(err.message , "error")
+      }
+    }
+  )
+
+
+
+  const onSubmit = (data: any) => mutation.mutate(data)
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='login_form'>
       <HeadingH2>Sign Up</HeadingH2>
@@ -41,7 +64,7 @@ export const Signup = () => {
         <p className='error_text'>{errors.password?.message}</p>
       </div>
       <p> Already have an account? <Link href={'/auth/login'}> Log in</Link></p>
-      <button className='login_button' type='submit'>Sign Up</button>
+      <Button text={'Sign Up'} isLoading={mutation.isLoading} type={'submit'}/>
     </form>
   )
 }

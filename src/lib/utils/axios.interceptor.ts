@@ -61,7 +61,7 @@ httpService.interceptors.response.use(
     return response.data;
   },
   (error) => {
-    const errorResponse = error.response;
+    const errorResponse = error.response.data;
     // notify({
     //   message: errorResponse.message,
     //   type: 'error',

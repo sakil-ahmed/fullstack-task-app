@@ -4,6 +4,7 @@ import {AnalyticsIcon, BoardIcon, DashboardIcon, LogoutIcon, SettingIcon} from "
 import Link from "next/link";
 import {useRouter , usePathname} from "next/navigation";
 import {authService} from "@/features/auth/logic/auth.service";
+import {Notify} from "@/lib/utils/Notify";
 
 export const Sidebar = () => {
 
@@ -40,6 +41,7 @@ export const Sidebar = () => {
   const logOut = ()=>{
     authService.clearSession()
     router.push('/auth/login', { scroll: false })
+    Notify("Successfully logged out","success")
   }
 
   return (

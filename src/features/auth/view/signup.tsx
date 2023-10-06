@@ -30,7 +30,7 @@ export const Signup = () => {
   })
 
 
-  const mutation = useMutation((dto: any) => authService.login(dto),
+  const mutation = useMutation((dto: any) => authService.signUp(dto),
     {
       onSuccess() {
         Notify("Account Created" , "success")

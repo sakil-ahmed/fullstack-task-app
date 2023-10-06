@@ -8,7 +8,7 @@ import {
 
 
 } from '@tanstack/react-query'
-import {ToastContainer} from 'react-toastify';
+import {ToastContainer , Zoom} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useRouter, usePathname} from "next/navigation";
 
@@ -39,7 +39,6 @@ export const ClientProvider = ({children}: { children: React.ReactNode }) => {
     <ToastContainer
       position="bottom-center"
       autoClose={3000}
-      hideProgressBar={false}
       newestOnTop={false}
       closeOnClick
       rtl={false}
@@ -47,6 +46,7 @@ export const ClientProvider = ({children}: { children: React.ReactNode }) => {
       draggable
       pauseOnHover
       theme="light"
+      transition={Zoom}
     />
   </QueryClientProvider>)
 }

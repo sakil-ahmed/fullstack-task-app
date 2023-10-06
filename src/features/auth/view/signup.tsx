@@ -25,6 +25,7 @@ export const Signup = () => {
     register,
     handleSubmit,
     formState: {errors},
+    reset
   } = useForm({
     resolver: yupResolver(schema),
   })
@@ -35,9 +36,11 @@ export const Signup = () => {
       onSuccess() {
         Notify("Account Created" , "success")
         router.push('/board', { scroll: false })
+        reset()
       },
       onError(err:AuthEntity.responseError) {
         Notify(err.message , "error")
+        reset()
       }
     }
   )

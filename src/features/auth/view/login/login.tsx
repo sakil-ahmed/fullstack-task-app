@@ -38,19 +38,19 @@ export const Login = () => {
   const mutation = useMutation((dto: any) => authService.login(dto),
     {
       onSuccess() {
-        Notify("Logged in" , "success")
-        router.push('/board', { scroll: false })
+        Notify("Logged in", "success")
+        router.push('/board', {scroll: false})
+        reset()
       },
-      onError(err:AuthEntity.responseError) {
-        Notify(err.message , "error")
+      onError(err: AuthEntity.responseError) {
+        Notify(err.message, "error")
+        reset()
       }
     }
   )
 
-  const onSubmit = (data: any) => {
-    mutation.mutate(data);
-    reset()
-  }
+  const onSubmit = (data: any) => mutation.mutate(data);
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='login_form'>

@@ -450,6 +450,15 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
+avatar-initials@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/avatar-initials/-/avatar-initials-6.0.0.tgz#d4d0edc92b63d7bbbf68696dc7310683e0b1cf44"
+  integrity sha512-EKpdaOhSuknJB9lxbhf83EjYN//ynPIJq4EJhcDFfU94yIzwa+mT5tKS8Hij5It9fqG8A3NZoUs28vyK5dFc+w==
+  optionalDependencies:
+    "@types/react" "^18"
+    react "^18"
+    react-dom "^18"
+
 axe-core@^4.6.2:
   version "4.8.2"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.8.2.tgz#2f6f3cde40935825cf4465e3c1c9e77b240ff6ae"

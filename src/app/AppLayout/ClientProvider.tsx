@@ -5,10 +5,8 @@ import {authStore, useAuthStore} from "@/features/auth/logic/auth.store";
 import {
   QueryClient,
   QueryClientProvider,
-
-
 } from '@tanstack/react-query'
-import {ToastContainer , Zoom} from 'react-toastify';
+import {ToastContainer, Zoom} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useRouter, usePathname} from "next/navigation";
 
@@ -20,17 +18,14 @@ export const ClientProvider = ({children}: { children: React.ReactNode }) => {
   const pathname = usePathname()
   const {isAuthenticated} = useAuthStore()
 
+
   useEffect(() => {
     const isAuthRoute = pathname.split('/').includes('auth');
 
-    if (!isAuthRoute && !isAuthenticated) {
+    if (!isAuthenticated) {
       router.push('/auth/login')
     }
-    if (isAuthRoute && isAuthenticated) {
-      router.push('/board')
-    }
-  }, [children, isAuthenticated, router, pathname]);
-
+  }, [isAuthenticated, pathname, router]);
 
   const queryClient = new QueryClient()
   persistStore(authStore, 'AUTH');

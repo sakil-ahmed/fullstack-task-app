@@ -1,7 +1,11 @@
+
 import React from "react";
-import {Sidebar} from "@/app/AppLayout/Sidebar/Sidebar";
+import 'nprogress/nprogress.css';
+
+
 
 export const AppLayout = ({children}: { children: React.ReactNode }) => {
+
   return (
     <div>
 

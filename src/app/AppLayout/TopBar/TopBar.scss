@@ -1,3 +1,4 @@
+@import 'src/styles/variable';
 .topbar_root {
   display: flex;
   align-items: center;
@@ -24,5 +25,11 @@
     width: 32px;
     height: 32px;
     border-radius:50%;
+    background-color:rgba($typography,0.10);
+    border: 1px solid $typography;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
 }

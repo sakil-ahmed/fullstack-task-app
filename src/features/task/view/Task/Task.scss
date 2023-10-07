@@ -1,0 +1,42 @@
+@import "../../../../styles/variable";
+
+.task {
+  padding: 24px;
+  width: 100%;
+  border-radius: 10px;
+  background: #FFF;
+  cursor: grab;
+
+  .task_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      color: $gray;
+      font-size: 8px;
+      font-weight: 500;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      background-color: $typography;
+      border-radius: 50%;
+    }
+  }
+
+  .task_title {
+    color: $black;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  .task_description {
+    color: $black;
+    font-size: 12px;
+    font-weight: 400;
+
+  }
+}

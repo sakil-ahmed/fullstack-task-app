@@ -12,3 +12,11 @@
     gap: 8px;
   }
 }
+.board_container{
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+}

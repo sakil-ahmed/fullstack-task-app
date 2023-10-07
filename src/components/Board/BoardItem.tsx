@@ -1,0 +1,29 @@
+import {PlusIcon, ThreeDotIcon} from "@/common/icons";
+import {Task} from "@/features/task/view/Task/Task";
+
+type props = {
+  title: string
+  task: any
+}
+
+export const BoardItem = ({title, task}: props) => {
+  return (
+    <div className='board_item'>
+      {/*Board header*/}
+      <div className='board_item_header'>
+        <h5 className='board_item_title'>{title}</h5>
+        <div className='board_item_header_cta'>
+          <span><PlusIcon/></span>
+          <span><ThreeDotIcon/></span>
+        </div>
+      </div>
+      {/* Board Body */}
+      <div className='board_item_body'>
+        {task.map((task:any, i:any) => {
+          return <Task task={task} index={i} key={i}/>
+        })}
+
+      </div>
+    </div>
+  )
+}

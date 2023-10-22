@@ -18,6 +18,7 @@ export function useTaskDragAndDrop<T extends HTMLElement>({task, index}: { task:
 
 
   })
+  // @ts-ignore
   drag(ref);
   return {
     ref,

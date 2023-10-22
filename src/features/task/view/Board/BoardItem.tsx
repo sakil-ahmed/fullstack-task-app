@@ -1,5 +1,6 @@
 import {PlusIcon, ThreeDotIcon} from "@/common/icons";
 import {Task} from "@/features/task/view/Task/Task";
+import {AddTask} from "@/features/task/view/AddTask/AddTask";
 
 type props = {
   title: string
@@ -13,8 +14,8 @@ export const BoardItem = ({title, task}: props) => {
       <div className='board_item_header'>
         <h5 className='board_item_title'>{title}</h5>
         <div className='board_item_header_cta'>
-          <span><PlusIcon/></span>
-          <span><ThreeDotIcon/></span>
+          <AddTask/>
+          {/*<span><ThreeDotIcon/></span>*/}
         </div>
       </div>
       {/* Board Body */}

@@ -5,7 +5,7 @@ import {LeftSideBar} from "@/app/AppLayout/Sidebar/SidebarLayout";
 import {HeadingH1} from "@/components/heading/Heading";
 import {TopBar} from "@/app/AppLayout/TopBar/TopBar";
 import {DownArrowIcon} from "@/common/icons";
-import {BoardItem} from "@/components/Board/BoardItem";
+import {BoardItem} from "@/features/task/view/Board/BoardItem";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
 
@@ -41,11 +41,11 @@ export default function Page() {
           {/*  */}
 
           <div className='board_container'>
-            <DndProvider backend={HTML5Backend}>
+
             {array.map(({title , task}) => {
               return <BoardItem key={title} title={title} task={task}/>
             })}
-            </DndProvider>
+
           </div>
 
         </div>

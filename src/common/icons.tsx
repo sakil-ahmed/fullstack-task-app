@@ -162,9 +162,7 @@ export const BellIcon = () => {
 }
 
 
-
-
- export const SearchIcon=()=> {
+export const SearchIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -185,9 +183,7 @@ export const BellIcon = () => {
 }
 
 
-
-
-export const DownArrowIcon=()=> {
+export const DownArrowIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -197,6 +193,50 @@ export const DownArrowIcon=()=> {
       viewBox="0 0 13 7"
     >
       <path stroke="#000" strokeLinecap="round" d="M1 1l5.824 5L12 1"></path>
+    </svg>
+  );
+}
+
+
+export const PlusIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="none"
+      viewBox="0 0 16 16"
+    >
+      <path
+        stroke="#000"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="M8 1v14M1 8h14"
+      ></path>
+    </svg>
+  );
+}
+
+
+
+
+export const ThreeDotIcon=()=> {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="4"
+      fill="none"
+      viewBox="0 0 18 4"
+    >
+      <path
+        stroke="#000"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="M9 3a1 1 0 100-2 1 1 0 000 2zM16 3a1 1 0 100-2 1 1 0 000 2zM2 3a1 1 0 100-2 1 1 0 000 2z"
+      ></path>
     </svg>
   );
 }

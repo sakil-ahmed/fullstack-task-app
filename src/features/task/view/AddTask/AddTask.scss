@@ -1,0 +1,47 @@
+@import "src/styles/variable";
+
+.add_task_btn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.add_task_form {
+  width: 500px;
+  height: 300px;
+  padding: 40px;
+  background-color: $white;
+  border-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 12px 28px 0 rgba(140, 149, 159, 0.3);
+
+  &_title {
+    font-weight: 500;
+  }
+}
+
+.popup_close_btn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 20px;
+  right:20px;
+}
+
+.overlay{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($black , 0.10);
+}

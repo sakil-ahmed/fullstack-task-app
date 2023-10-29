@@ -21,12 +21,12 @@ export const Sidebar = () => {
       slug: "/board",
       icon: <BoardIcon/>,
     },
-    // {
-    //   id: 3,
-    //   name: "Analytics",
-    //   slug: "/analytics",
-    //   icon: <AnalyticsIcon/>,
-    // },
+    {
+      id: 3,
+      name: "Analytics",
+      slug: "/analytics",
+      icon: <AnalyticsIcon/>,
+    },
     {
       id: 4,
       name: "Settings",

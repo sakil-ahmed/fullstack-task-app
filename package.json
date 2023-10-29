@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.1",
     "@dnd-kit/core": "^6.0.8",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.3.1",
     "@poly-state/poly-state": "^1.1.4",
     "@poly-state/react": "^3.0.0",
@@ -17,9 +20,12 @@
     "avatar-initials": "^6.0.0",
     "axios": "^1.5.1",
     "dotenv": "^16.3.1",
+    "framer-motion": "^10.16.4",
     "next": "13.5.4",
     "nextjs-progressbar": "^0.0.16",
     "react": "^18",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
     "react-toastify": "^9.1.3",

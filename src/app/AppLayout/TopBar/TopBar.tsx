@@ -1,8 +1,7 @@
 'use client'
 import {BellIcon, HelpIcon, SearchIcon} from "@/common/icons";
 import {useAuthStore} from "@/features/auth/logic/auth.store";
-// @ts-ignore
-import {AvatarComponent} from 'avatar-initials';
+import {Avatar, Box} from "@chakra-ui/react";
 
 
 export const TopBar = () => {
@@ -15,13 +14,13 @@ export const TopBar = () => {
         <input placeholder='Search'/>
       </div>
       <div className='topbar_right'>
-        <div>
+        <Box cursor={'pointer'}>
           <BellIcon/>
-        </div>
-        <div>
+        </Box>
+          <Box cursor={'pointer'}>
           <HelpIcon/>
-        </div>
-        <div className='avatar'><span>Pro</span></div>
+          </Box>
+          <Avatar w={'32px'} h={'32px'}  name='Sakil Ahmed' src='https://bit.ly/dan-abramov' />
       </div>
     </div>
   )

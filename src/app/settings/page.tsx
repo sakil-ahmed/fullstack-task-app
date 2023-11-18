@@ -3,6 +3,7 @@ import {Sidebar} from "@/app/AppLayout/Sidebar/Sidebar";
 import {LeftSideBar} from "@/app/AppLayout/Sidebar/SidebarLayout";
 import {HeadingH1} from "@/components/heading/Heading";
 import {TopBar} from "@/app/AppLayout/TopBar/TopBar";
+import {Accrodion} from "@/features/settings/view/Accrodion";
 
 export default function Page() {
   return (
@@ -16,6 +17,8 @@ export default function Page() {
           <HeadingH1>
           Settings
           </HeadingH1>
+
+          <Accrodion/>
         </div>
       </AppLayout>
 

@@ -6,6 +6,7 @@ import {CiEdit} from "react-icons/ci";
 import {MdOutlineDeleteOutline} from "react-icons/md";
 import {CustomModal} from "@/lib/atom/Modal/Modal";
 import {AddTaskForm} from "@/features/task/view/AddTask/AddTaskForm";
+import {RemoveItemTrigger} from "@/lib/atom/RemoveItemPopup/RemoveItemPopup";
 
 interface Props {
 
@@ -32,14 +33,17 @@ export const TaskMenu: FC<Props> = () => {
                             <Text as={'span'} fontSize={'13px'} fontWeight={'500'}>Edit</Text>
                         </HStack>
                     </MenuItem>
-                    <MenuItem>
+                    {/*Remove Task*/}
+                    <RemoveItemTrigger onSubmit={() => false} openButton={<> <MenuItem>
                         <HStack>
                             <MdOutlineDeleteOutline/>
                             <Text as={'span'} fontSize={'13px'} fontWeight={'500'}>Delete</Text>
                         </HStack>
-                    </MenuItem>
+                    </MenuItem></>}/>
+
                 </MenuList>
             </Menu>
+            {/*Edit task popup*/}
             <EditTask isOpen={isOpen} onClose={onClose}/>
         </>
     )
@@ -54,9 +58,9 @@ interface props {
 const EditTask: FC<props> = ({isOpen, onClose}) => {
     const defaultValue = {
         title: 'Hero section',
-        categoryId: '',
+        categoryId: 'option2',
         description: 'Create a design system for a hero section in 2 different variants. Create a simple presentation with these components.',
-        status: ''
+        status: 'option3'
     }
     return (
         <>
@@ -64,6 +68,14 @@ const EditTask: FC<props> = ({isOpen, onClose}) => {
                 <AddTaskForm defaultValue={defaultValue}/>
             </CustomModal>
 
+        </>
+    )
+}
+
+
+const DeleteTask: FC<props> = ({}) => {
+    return (
+        <>
         </>
     )
 }

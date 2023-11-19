@@ -20,7 +20,7 @@ export const TopBar = () => {
           <Box cursor={'pointer'}>
           <HelpIcon/>
           </Box>
-          <Avatar w={'32px'} h={'32px'}  name='Sakil Ahmed' src='https://bit.ly/dan-abramov' />
+          <Avatar w={'32px'} h={'32px'} name={'Sakil'} src='https://bit.ly/dan-abramov' />
       </div>
     </div>
   )

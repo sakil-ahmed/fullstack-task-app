@@ -1,3 +1,4 @@
+'use client'
 import {PlusIcon, ThreeDotIcon} from "@/common/icons";
 import {Task} from "@/features/task/view/Task/Task";
 import {AddTask} from "@/features/task/view/AddTask/AddTask";
@@ -8,6 +9,7 @@ type props = {
 }
 
 export const BoardItem = ({title, task}: props) => {
+
   return (
     <div className='board_item'>
       {/*Board header*/}
@@ -15,7 +17,6 @@ export const BoardItem = ({title, task}: props) => {
         <h5 className='board_item_title'>{title}</h5>
         <div className='board_item_header_cta'>
           <AddTask/>
-          {/*<span><ThreeDotIcon/></span>*/}
         </div>
       </div>
       {/* Board Body */}

@@ -8,49 +8,58 @@ import {DownArrowIcon} from "@/common/icons";
 import {BoardItem} from "@/features/task/view/Board/BoardItem";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
+import {useMutation, useQueries, useQuery} from "@tanstack/react-query";
+import {taskService} from "@/features/task/logic/task.service";
 
 
 export default function Page() {
-  const array = [
-    {
-      title: "To do",
-      task: [
-        {column:'To do',id:12},{column:'To do',id:13}
-      ]
-    }, {
-      title: "In progress",
-      task: [{column:'In progress',id:111}]
-    },
-    {
-      title: "Done",
-      task: [{column:'In progress',id:222},{column:'In progress',id:333},{column:'In progress',id:444}]
-    },
-  ]
-  return (
-    <>
-      <AppLayout>
-        <LeftSideBar>
-          <Sidebar/>
-        </LeftSideBar>
-        <div className='root_view'>
-          <TopBar/>
-          <div className='root_view_top'>
-            <HeadingH1>Board</HeadingH1>
-            <button>This Week<DownArrowIcon/></button>
-          </div>
-          {/*  */}
+    const array = [
+        {
+            title: "To do",
+            task: [
+                {column: 'To do', id: 12}, {column: 'To do', id: 13}
+            ]
+        }, {
+            title: "In progress",
+            task: [{column: 'In progress', id: 111}]
+        },
+        {
+            title: "Done",
+            task: [{column: 'In progress', id: 222}, {column: 'In progress', id: 333}, {column: 'In progress', id: 444}]
+        },
+    ]
+    const {data} = useQuery({
+        queryKey: ['Tasks'],
+        queryFn: () => taskService.getAllTasks(),
 
-          <div className='board_container'>
+    })
 
-            {array.map(({title , task}) => {
-              return <BoardItem key={title} title={title} task={task}/>
-            })}
 
-          </div>
+    return (
+        <>
+            <AppLayout>
+                <LeftSideBar>
+                    <Sidebar/>
+                </LeftSideBar>
+                <div className='root_view'>
+                    <TopBar/>
+                    <div className='root_view_top'>
+                        <HeadingH1>Board</HeadingH1>
+                        <button>This Week<DownArrowIcon/></button>
+                    </div>
+                    {/*  */}
 
-        </div>
-      </AppLayout>
+                    <div className='board_container'>
 
-    </>
-  )
+                        {array.map(({title, task}) => {
+                            return <BoardItem key={title} title={title} task={task}/>
+                        })}
+
+                    </div>
+
+                </div>
+            </AppLayout>
+
+        </>
+    )
 }

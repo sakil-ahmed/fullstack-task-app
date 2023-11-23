@@ -1,10 +1,25 @@
-import {ThreeDotIcon} from "@/common/icons";
-import {useTaskDragAndDrop} from "@/common/Hooks/useTaskDragAndDrop";
-import {TaskModel} from "@/lib/utils/models";
+'use client'
 import {TaskMenu} from "@/features/task/view/Task/TaskMenu/TaskMenu";
+import {FC} from "react";
+import {Box} from "@chakra-ui/react";
 
-export const Task = ({task, index}: { task: TaskModel, index: number }) => {
+interface Task {
+    id: string
+    title: string
+    description: string
+    status: string
+    categoryId: string
+    createdBy: string
 
+}
+
+interface props {
+    task: Task
+}
+
+export const Task: FC<props> = ({task}) => {
+
+    console.log(task)
 
     return (
         <div className='task'>
@@ -18,11 +33,8 @@ export const Task = ({task, index}: { task: TaskModel, index: number }) => {
                 <TaskMenu/>
             </div>
             <div className='task_body'>
-                <h5 className='task_title'>Hero section</h5>
-                <p className='task_description'>Create a design system for a hero section in 2 different variants.
-                    Create a
-                    simple presentation with these
-                    components.</p>
+                <h5 className='task_title'>{task.title}</h5>
+                <p className='task_description'>{task.description}</p>
             </div>
         </div>
     )

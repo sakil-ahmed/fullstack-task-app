@@ -1,3 +1,4 @@
+'use client'
 import {Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/menu";
 import {HStack, IconButton, Text, useDisclosure} from "@chakra-ui/react";
 import {BsThreeDots} from "react-icons/bs";

@@ -1,4 +1,5 @@
 import httpService from "@/lib/utils/axios.interceptor";
+import {taskStore} from "@/features/task/logic/task.store";
 
 class TaskService {
 
@@ -8,6 +9,8 @@ class TaskService {
         if (!res) {
             return null
         }
+
+        taskStore.setTasks(res)
 
         return res
 

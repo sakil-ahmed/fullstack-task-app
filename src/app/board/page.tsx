@@ -16,16 +16,15 @@ export default function Page() {
     const array = [
         {
             title: "To do",
-            task: [
-                {column: 'To do', id: 12}, {column: 'To do', id: 13}
-            ]
+            status: "todo",
+
         }, {
             title: "In progress",
-            task: [{column: 'In progress', id: 111}]
+            status: "in_progress",
         },
         {
             title: "Done",
-            task: [{column: 'In progress', id: 222}, {column: 'In progress', id: 333}, {column: 'In progress', id: 444}]
+            status: 'done'
         },
     ]
     const {data} = useQuery({
@@ -51,8 +50,8 @@ export default function Page() {
 
                     <div className='board_container'>
 
-                        {array.map(({title, task}) => {
-                            return <BoardItem key={title} title={title} task={task}/>
+                        {array.map((item) => {
+                            return <BoardItem key={item.title} item={item} />
                         })}
 
                     </div>
